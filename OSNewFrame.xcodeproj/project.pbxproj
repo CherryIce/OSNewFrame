@@ -83,6 +83,9 @@
 		8F6549341FCFAA190049E276 /* OSRegisterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6549331FCFAA190049E276 /* OSRegisterViewController.m */; };
 		8F6549371FCFAA590049E276 /* OSForgotCipherViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6549361FCFAA590049E276 /* OSForgotCipherViewController.m */; };
 		8F65493B1FCFAE5D0049E276 /* OSSetupViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F65493A1FCFAE5D0049E276 /* OSSetupViewController.m */; };
+		8F65493E1FCFDCDA0049E276 /* OSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F65493D1FCFDCDA0049E276 /* OSTableViewController.m */; };
+		8F6549421FCFE11A0049E276 /* OSPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6549411FCFE11A0049E276 /* OSPlaceholderView.m */; };
+		8F6549451FCFE5340049E276 /* OSTabPlaceholderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6549441FCFE5340049E276 /* OSTabPlaceholderController.m */; };
 		FF9166A886C28B2D5303C10C /* libPods-OSNewFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61829A36042D5BFF108CA7C5 /* libPods-OSNewFrame.a */; };
 /* End PBXBuildFile section */
 
@@ -250,6 +253,12 @@
 		8F6549361FCFAA590049E276 /* OSForgotCipherViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSForgotCipherViewController.m; sourceTree = "<group>"; };
 		8F6549391FCFAE5D0049E276 /* OSSetupViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSSetupViewController.h; sourceTree = "<group>"; };
 		8F65493A1FCFAE5D0049E276 /* OSSetupViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSSetupViewController.m; sourceTree = "<group>"; };
+		8F65493C1FCFDCDA0049E276 /* OSTableViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSTableViewController.h; sourceTree = "<group>"; };
+		8F65493D1FCFDCDA0049E276 /* OSTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSTableViewController.m; sourceTree = "<group>"; };
+		8F6549401FCFE11A0049E276 /* OSPlaceholderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSPlaceholderView.h; sourceTree = "<group>"; };
+		8F6549411FCFE11A0049E276 /* OSPlaceholderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPlaceholderView.m; sourceTree = "<group>"; };
+		8F6549431FCFE5340049E276 /* OSTabPlaceholderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSTabPlaceholderController.h; sourceTree = "<group>"; };
+		8F6549441FCFE5340049E276 /* OSTabPlaceholderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSTabPlaceholderController.m; sourceTree = "<group>"; };
 		9E91CBD07A77AEBB4082E2FC /* Pods-OSNewFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSNewFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSNewFrame/Pods-OSNewFrame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -394,6 +403,8 @@
 				8F439EB91FCE9AAC001CA819 /* OSViewController.m */,
 				8F439F531FCEB87E001CA819 /* OSWebViewController.h */,
 				8F439F541FCEB87E001CA819 /* OSWebViewController.m */,
+				8F65493C1FCFDCDA0049E276 /* OSTableViewController.h */,
+				8F65493D1FCFDCDA0049E276 /* OSTableViewController.m */,
 			);
 			path = OSMainClass;
 			sourceTree = "<group>";
@@ -434,6 +445,7 @@
 		8F439EAE1FCE9A29001CA819 /* OSOther */ = {
 			isa = PBXGroup;
 			children = (
+				8F65493F1FCFE0D70049E276 /* OSPlaceholderView */,
 				8F439F791FCED59B001CA819 /* OSGuide */,
 				8F439EEE1FCEAA13001CA819 /* OSThird */,
 				8F439EBD1FCE9AD5001CA819 /* OSCell */,
@@ -796,8 +808,19 @@
 			children = (
 				8F6549391FCFAE5D0049E276 /* OSSetupViewController.h */,
 				8F65493A1FCFAE5D0049E276 /* OSSetupViewController.m */,
+				8F6549431FCFE5340049E276 /* OSTabPlaceholderController.h */,
+				8F6549441FCFE5340049E276 /* OSTabPlaceholderController.m */,
 			);
 			path = OSSetup;
+			sourceTree = "<group>";
+		};
+		8F65493F1FCFE0D70049E276 /* OSPlaceholderView */ = {
+			isa = PBXGroup;
+			children = (
+				8F6549401FCFE11A0049E276 /* OSPlaceholderView.h */,
+				8F6549411FCFE11A0049E276 /* OSPlaceholderView.m */,
+			);
+			path = OSPlaceholderView;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1014,6 +1037,7 @@
 				8F439F171FCEAA24001CA819 /* UITableView+SDAutoTableViewCellHeight.m in Sources */,
 				8F439F5A1FCEB9CA001CA819 /* OSDisplayListsCell.m in Sources */,
 				8F439ECF1FCE9C69001CA819 /* Function4ViewController.m in Sources */,
+				8F65493E1FCFDCDA0049E276 /* OSTableViewController.m in Sources */,
 				8F439F431FCEB406001CA819 /* OSUserModel.m in Sources */,
 				8F439F181FCEAA24001CA819 /* UIView+SDAutoLayout.m in Sources */,
 				8F439EDD1FCE9D2E001CA819 /* OSUtilityHelper.m in Sources */,
@@ -1044,6 +1068,7 @@
 				8F439F2E1FCEAB42001CA819 /* OSUserInfoManage.m in Sources */,
 				8F439EE31FCEA16A001CA819 /* UIColor+OSHexString.m in Sources */,
 				8F439F161FCEAA24001CA819 /* UIViewController+AlertController.m in Sources */,
+				8F6549421FCFE11A0049E276 /* OSPlaceholderView.m in Sources */,
 				8F439F471FCEB4B8001CA819 /* LabelTextFieldCell.m in Sources */,
 				8F439EB11FCE9A55001CA819 /* OSTabBarController.m in Sources */,
 				8F6549371FCFAA590049E276 /* OSForgotCipherViewController.m in Sources */,
@@ -1052,6 +1077,7 @@
 				8F6549341FCFAA190049E276 /* OSRegisterViewController.m in Sources */,
 				8F439EDA1FCE9D13001CA819 /* OSVerifyHelper.m in Sources */,
 				8F439EEC1FCEA1AA001CA819 /* CALayer+OSBorderColor.m in Sources */,
+				8F6549451FCFE5340049E276 /* OSTabPlaceholderController.m in Sources */,
 				8F439F1C1FCEAA24001CA819 /* SGScanningQRCodeVC.m in Sources */,
 				8F439F1E1FCEAA24001CA819 /* SGBottomView.m in Sources */,
 				8F439F321FCEACF1001CA819 /* LoadingView.m in Sources */,

@@ -22,6 +22,7 @@
 /**  CustomView  **/
 #import "LoadingView.h"
 #import "MyRefreshHeader.h"
+#import "OSPlaceholderView.h"
 
 /**  Manager  **/
 #import "OSNetWorkHelper.h"

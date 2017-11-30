@@ -12,6 +12,8 @@
 
 #import "SectionLabelHeader.h"
 
+#import "OSTabPlaceholderController.h"
+
 @interface OSSetupViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @property (nonatomic,strong) UITableView * tableView;
@@ -29,6 +31,7 @@ static NSString * LabelSwitchCellID = @"LabelSwitchCell";
 {
     if (!_tableView) {
         _tableView = [OSUIFactory initTableViewWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight) style:UITableViewStyleGrouped delegate:self];
+        _tableView.backgroundColor = kWhiteColor;
         [self.view addSubview:self.tableView];
     }
     return _tableView;
@@ -63,6 +66,7 @@ static NSString * LabelSwitchCellID = @"LabelSwitchCell";
         cell.selectionStyle = UITableViewCellSelectionStyleNone;
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
         cell.textLabel.text = @"设置的属性说明";
+        cell.textLabel.font = systemOfFont(15);
         return cell;
     }else{
         LabelSwitchCell * cell = [tableView dequeueReusableCellWithIdentifier:LabelSwitchCellID];
@@ -94,7 +98,9 @@ static NSString * LabelSwitchCellID = @"LabelSwitchCell";
 
 - (nullable UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section
 {
-    SectionLabelHeader * header = [[SectionLabelHeader alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, OSCellHeight)];
+    SectionLabelHeader * header = [[NSBundle mainBundle] loadNibNamed:@"SectionLabelHeader" owner:nil options:nil].lastObject;
+    [header setFrame:CGRectMake(0, 0, kScreenWidth, OSCellHeight)];
+    header.sectionTitleLab.textAlignment = NSTextAlignmentCenter;
     header.sectionTitleLab.text = @[@"提醒设置",@"通知提醒"][section];
     return header;
 }
@@ -106,7 +112,8 @@ static NSString * LabelSwitchCellID = @"LabelSwitchCell";
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    
+    OSTabPlaceholderController * placeholder = [[OSTabPlaceholderController alloc] init];
+    [self.navigationController showViewController:placeholder sender:self];
 }
 
 - (void)didReceiveMemoryWarning {

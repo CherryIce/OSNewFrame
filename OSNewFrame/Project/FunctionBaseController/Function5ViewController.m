@@ -8,6 +8,8 @@
 
 #import "Function5ViewController.h"
 
+#import "OSSetupViewController.h"
+
 @interface Function5ViewController ()
 
 @end
@@ -25,7 +27,9 @@
 }
 
 - (IBAction)setupClick:(UIButton *)sender {
-    
+    OSSetupViewController * ctl = [[OSSetupViewController alloc] init];
+    ctl.title = @"属性设置";
+    [self.navigationController showViewController:ctl sender:self];
 }
 
 - (void)didReceiveMemoryWarning {
