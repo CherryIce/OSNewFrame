@@ -8,7 +8,9 @@
 
 #import "AppDelegate.h"
 
-@interface AppDelegate ()
+#import "OSGuideViewController.h"
+
+@interface AppDelegate ()<OSGuideSelectDelegate>
 
 @end
 
@@ -17,9 +19,65 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
+    
+    /**
+     获取是否存在缓存
+     */
+    [self gainUserModel];
+    
+    [self configAppearance];
+    
+    self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
+    self.window.backgroundColor = [UIColor whiteColor];
+    
+    if ([OSGuideViewController isShow]) {
+        OSGuideViewController * guide = [[OSGuideViewController alloc] init];
+        self.window.rootViewController = guide;
+        guide.delegate = self;
+        [guide guidePageControllerWithImages:@[@"pager1",@"pager2"]];
+    }else{
+        [self clickEnter];
+    }
+    
+    [self.window makeKeyAndVisible];
+    
     return YES;
 }
 
+- (void) clickEnter
+{
+    self.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    [self.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:2.0f];
+}
+
+- (void) gainUserModel
+{
+    NSData * data = [[NSUserDefaults standardUserDefaults] objectForKey:[NSString stringWithFormat:@"%@UserModel",AppName]];
+    if (data) {
+        if ([data isKindOfClass:[NSString class]]) {
+            if (data.length <= 0) {
+                [OSUserInfoManage shareInstance].is_login = NO;
+            }
+        }else{
+            //在这里解档
+            id obj = [NSKeyedUnarchiver unarchiveObjectWithData:data];
+            if ([obj isKindOfClass:[NSDictionary class]])
+            {
+                [OSUserInfoManage shareInstance].userInfo = [[OSUserModel alloc] initWithDictionary:obj];
+                [OSUserInfoManage shareInstance].is_login = YES;
+            }
+        }
+        
+    }else{
+        [OSUserInfoManage shareInstance].is_login = NO;
+    }
+}
+
+- (void)configAppearance
+{
+    [[UINavigationBar appearance] setTintColor:[UIColor darkTextColor]];
+    [[UITabBar appearance] setTintColor:[UIColor darkGrayColor]];
+}
 
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.

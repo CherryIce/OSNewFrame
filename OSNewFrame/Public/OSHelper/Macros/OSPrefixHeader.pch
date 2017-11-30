@@ -1,0 +1,52 @@
+//
+//  OSPrefixHeader.pch
+//  OSNewFrame
+//
+//  Created by Macx on 2017/11/29.
+//  Copyright © 2017年 Macx. All rights reserved.
+//
+
+#ifndef OSPrefixHeader_pch
+#define OSPrefixHeader_pch
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#import "OSHeader.h"
+
+#define AppVersion  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define AppName  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+
+#define kIOS11Later [[[UIDevice currentDevice] systemVersion] floatValue] >= 11.0
+
+#define systemOfFont(size) [UIFont systemFontOfSize:size]
+
+#define kNavBarTintColor UIColorHex(F8F8F8)
+
+#define UIIMAGE(named) [UIImage imageNamed:named]
+
+#define kScreenWidth [UIScreen mainScreen].bounds.size.width
+#define kScreenHeight [UIScreen mainScreen].bounds.size.height
+
+#define kWhiteColor [UIColor whiteColor]
+
+#define kStatusBarHeight [[UIApplication sharedApplication] statusBarFrame].size.height
+
+#define KNavBarHeight (kStatusBarHeight+44)
+#define KToolHeight (kDevice_Is_iPhoneX?83:49)
+
+#define kDevice_Is_iPhoneX ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1125, 2436), [[UIScreen mainScreen] currentMode].size) : NO)
+
+#define  adjustsScrollViewInsets_NO(scrollView,vc)\
+do { \
+_Pragma("clang diagnostic push") \
+_Pragma("clang diagnostic ignored \"-Warc-performSelector-leaks\"") \
+if ([UIScrollView instancesRespondToSelector:NSSelectorFromString(@"setContentInsetAdjustmentBehavior:")]) {\
+[scrollView   performSelector:NSSelectorFromString(@"setContentInsetAdjustmentBehavior:") withObject:@(2)];\
+} else {\
+vc.automaticallyAdjustsScrollViewInsets = NO;\
+}\
+_Pragma("clang diagnostic pop") \
+} while (0)
+
+#endif /* OSPrefixHeader_pch */
