@@ -45,9 +45,15 @@
 {
     [self setUpDisplayStyle:^(UIColor *__autoreleasing *titleScrollViewBgColor, UIColor *__autoreleasing *norColor, UIColor *__autoreleasing *selColor, UIColor *__autoreleasing *proColor, UIFont *__autoreleasing *titleFont, CGFloat *titleButtonWidth, BOOL *isShowPregressView, BOOL *isOpenStretch, BOOL *isOpenShade) {
         
+        *norColor = [UIColor darkTextColor];
+        *selColor = *proColor = [UIColor orangeColor];
+        
         *titleFont = systemOfFont(17);
         *isShowPregressView = YES;
         *isOpenStretch = YES;
+    }];
+    [self setUpProgressAttribute:^(CGFloat *progressLength, CGFloat *progressHeight) {
+        *progressHeight = 3;
     }];
 }
 

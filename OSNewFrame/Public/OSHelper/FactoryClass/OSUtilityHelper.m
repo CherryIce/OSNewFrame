@@ -8,8 +8,6 @@
 
 #import "OSUtilityHelper.h"
 
-//#import "LoginViewController.h"
-
 #import "GTMBase64.h"
 
 #import <CommonCrypto/CommonCryptor.h>
@@ -21,12 +19,12 @@
 /** 是否登录,return NO 就跳转到登录页面 */
 + (BOOL) isLogin:(UIViewController *) vc
 {
-//    if ([UserInfoManage shareInstance].is_login == NO)
-//    {
-//        LoginViewController *advanceCtl=[[LoginViewController alloc]initWithNibName:@"LoginViewController" bundle:nil];
-//        [vc.navigationController pushViewController:advanceCtl animated:YES];
-//        return NO;
-//    }
+    if ([OSUserInfoManage shareInstance].is_login == NO)
+    {
+        UIViewController * sb = [[UIStoryboard storyboardWithName:@"OSLoginStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"OSLogin"];
+        [vc.navigationController showViewController:sb sender:self];
+        return NO;
+    }
     return YES;
 }
 

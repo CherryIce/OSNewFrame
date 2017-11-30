@@ -93,26 +93,37 @@
  */
 - (void) transcribe
 {
-    XFCameraController *cameraController = [XFCameraController defaultCameraController];
-    
-    __weak XFCameraController *weakCameraController = cameraController;
-    
-    cameraController.takePhotosCompletionBlock = ^(UIImage *image, NSError *error) {
+    AVCaptureDevice *device = [AVCaptureDevice defaultDeviceWithMediaType:AVMediaTypeVideo];
+    if (device) {
+        /** 真机测试 **/
+        XFCameraController *cameraController = [XFCameraController defaultCameraController];
+        
+        __weak XFCameraController *weakCameraController = cameraController;
+        
+        cameraController.takePhotosCompletionBlock = ^(UIImage *image, NSError *error) {
 #pragma mark 此处是拍照
-        //回归主线程操作
-        [weakCameraController dismissViewControllerAnimated:YES completion:nil];
-    };
-    
-    cameraController.shootCompletionBlock = ^(NSURL *videoUrl, CGFloat videoTimeLength, UIImage *thumbnailImage, NSError *error) {
+            //回归主线程操作
+            [weakCameraController dismissViewControllerAnimated:YES completion:nil];
+        };
+        
+        cameraController.shootCompletionBlock = ^(NSURL *videoUrl, CGFloat videoTimeLength, UIImage *thumbnailImage, NSError *error) {
 #pragma mark 此处是视频
-        [[NSOperationQueue mainQueue] addOperationWithBlock:^{
-            _videoUrl = videoUrl;
-            [self showImgResetUI:thumbnailImage];
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                _videoUrl = videoUrl;
+                [self showImgResetUI:thumbnailImage];
+            }];
+            [weakCameraController dismissViewControllerAnimated:YES completion:nil];
+        };
+        
+        [self presentViewController:cameraController animated:YES completion:nil];
+    }else{
+        /** 模拟器禁止此功能 **/
+        [self showAlertWithTitle:@"" message:@"请在真机上测试" appearanceProcess:^(EJAlertViewController * _Nonnull alertMaker) {
+            alertMaker.addActionCancelTitle(@"确定");
+        } actionsBlock:^(NSInteger buttonIndex, UIAlertAction * _Nonnull action, EJAlertViewController * _Nonnull alertSelf) {
+            
         }];
-        [weakCameraController dismissViewControllerAnimated:YES completion:nil];
-    };
-    
-    [self presentViewController:cameraController animated:YES completion:nil];
+    }
 }
 
 /**

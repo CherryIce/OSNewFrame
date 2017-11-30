@@ -116,6 +116,12 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
 {
     [super viewWillAppear:animated];
     
+    [self configurationUI];
+}
+
+/** 构画UI */
+- (void) configurationUI
+{
     AVAuthorizationStatus authStatus = [AVCaptureDevice authorizationStatusForMediaType:AVMediaTypeVideo];
     if (authStatus == AVAuthorizationStatusRestricted || authStatus == AVAuthorizationStatusDenied)
     {
@@ -135,7 +141,6 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
     [self configDefaultUIDisplay];
     
     [self addTapGenstureRecognizerForCamera];
-    
 }
 
 - (void)viewDidAppear:(BOOL)animated
@@ -147,7 +152,6 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
     [self setFocusCursorWithPoint:self.viewContainer.center];
     
     [self tipLabelAnimation];
-    
 }
 
 - (void)viewWillDisappear:(BOOL)animated
@@ -354,20 +358,21 @@ typedef void(^PropertyChangeBlock)(AVCaptureDevice *captureDevice);
  */
 - (void)initAVCaptureSession
 {
-    //1、添加 "视频" 与 "音频" 输入流到session
-    [self setupVideo];
+        //1、添加 "视频" 与 "音频" 输入流到session
+        [self setupVideo];
+        
+        [self setupAudio];
+        
+        //2、添加图片，movie输出流到session
+        [self setupCaptureStillImageOutput];
+        
+        //3、创建视频预览层，用于实时展示摄像头状态
+        [self setupCaptureVideoPreviewLayer];
+        
+        //设置静音状态也可播放声音
+        AVAudioSession *audioSession = [AVAudioSession sharedInstance];
+        [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
     
-    [self setupAudio];
-    
-    //2、添加图片，movie输出流到session
-    [self setupCaptureStillImageOutput];
-    
-    //3、创建视频预览层，用于实时展示摄像头状态
-    [self setupCaptureVideoPreviewLayer];
-    
-    //设置静音状态也可播放声音
-    AVAudioSession *audioSession = [AVAudioSession sharedInstance];
-    [audioSession setCategory:AVAudioSessionCategoryPlayback error:nil];
 }
 
 /**
