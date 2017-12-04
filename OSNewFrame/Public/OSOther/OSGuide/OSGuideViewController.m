@@ -21,6 +21,7 @@
 - (void)guidePageControllerWithImages:(NSArray *)images
 {
     UIScrollView *gui = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
+    gui.backgroundColor = [UIColor redColor];
     gui.delegate = self;
     gui.pagingEnabled = YES;
     // 隐藏滑动条
@@ -31,8 +32,10 @@
     for (NSInteger i = 0; i < images.count; i ++) {
         [gui addSubview:({
             self.btnEnter = [UIButton buttonWithType:UIButtonTypeCustom];
-            self.btnEnter.frame = CGRectMake(kScreenWidth * i, 0, kScreenWidth, kScreenHeight);
-            [self.btnEnter setImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];;
+            self.btnEnter.frame = CGRectMake(kScreenWidth * i, 0,kScreenWidth, kScreenHeight);
+            [self.btnEnter setAdjustsImageWhenHighlighted:false];
+            //setImage
+            [self.btnEnter setBackgroundImage:[UIImage imageNamed:images[i]] forState:UIControlStateNormal];;
             self.btnEnter;
         })];
         
