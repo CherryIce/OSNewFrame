@@ -53,32 +53,7 @@
         <scene sceneID="auu-nb-nzW">
             <objects>
                 <viewController id="A3B-QI-DBE" customClass="Function2ViewController" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="J9Y-UW-JlE"/>
-                        <viewControllerLayoutGuide type="bottom" id="cjS-3L-Iif"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="mEu-bf-IkF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击搜索框去自定义搜索" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8ua-rK-g4c">
-                                <rect key="frame" x="50" y="114" width="275" height="30.5"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30.5" id="6Nt-J1-yax"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="8ua-rK-g4c" firstAttribute="top" secondItem="J9Y-UW-JlE" secondAttribute="bottom" constant="50" id="2Nw-Ec-hID"/>
-                            <constraint firstAttribute="trailing" secondItem="8ua-rK-g4c" secondAttribute="trailing" constant="50" id="f4a-X9-9L4"/>
-                            <constraint firstItem="8ua-rK-g4c" firstAttribute="leading" secondItem="mEu-bf-IkF" secondAttribute="leading" constant="50" id="qga-G3-CSd"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" title="SOD" id="47O-BS-FtT"/>
+                    <navigationItem key="navigationItem" title="SOD" id="MAN-A2-KaU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kvE-ik-MoU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -120,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4i3-Ar-skl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-36" y="933.28335832083962"/>
+            <point key="canvasLocation" x="-39" y="901"/>
         </scene>
         <!--SSS-->
         <scene sceneID="idc-6z-tKc">
@@ -133,45 +108,7 @@
                     <view key="view" contentMode="scaleToFill" id="fUG-cb-WG8">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K7c-Wv-Cs1">
-                                <rect key="frame" x="50" y="114" width="275" height="50"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="3G6-At-RdE"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="登陆">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="loginClick:" destination="aB3-CO-poR" eventType="touchUpInside" id="nh6-KI-n5k"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VMO-6z-aGX">
-                                <rect key="frame" x="50" y="214" width="275" height="50"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="50" id="abn-hu-bCB"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="设置">
-                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="setupClick:" destination="aB3-CO-poR" eventType="touchUpInside" id="R01-uR-Gew"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstItem="K7c-Wv-Cs1" firstAttribute="top" secondItem="m1a-oQ-Mrt" secondAttribute="bottom" constant="50" id="0TL-ol-XhW"/>
-                            <constraint firstAttribute="trailing" secondItem="K7c-Wv-Cs1" secondAttribute="trailing" constant="50" id="FKg-ZP-gXP"/>
-                            <constraint firstItem="K7c-Wv-Cs1" firstAttribute="leading" secondItem="fUG-cb-WG8" secondAttribute="leading" constant="50" id="HHY-ro-406"/>
-                            <constraint firstItem="VMO-6z-aGX" firstAttribute="top" secondItem="K7c-Wv-Cs1" secondAttribute="bottom" constant="50" id="JQg-ad-5qh"/>
-                            <constraint firstItem="VMO-6z-aGX" firstAttribute="leading" secondItem="fUG-cb-WG8" secondAttribute="leading" constant="50" id="RuH-vg-8Zt"/>
-                            <constraint firstAttribute="trailing" secondItem="VMO-6z-aGX" secondAttribute="trailing" constant="50" id="fAG-M9-bbF"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="SSS" id="C3T-Tf-Bnq"/>
                 </viewController>

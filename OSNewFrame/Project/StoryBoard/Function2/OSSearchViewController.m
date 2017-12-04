@@ -35,6 +35,7 @@ static NSString * OSSearchHistoryCellID = @"OSSearchHistoryCell";
 {
     if (!_searchNavBar) {
         _searchNavBar = [[OSSearchNavBar alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, KNavBarHeight)];
+        _searchNavBar.cityName.text = [[NSUserDefaults standardUserDefaults] objectForKey:@"locationCity"];
     }
     return _searchNavBar;
 }

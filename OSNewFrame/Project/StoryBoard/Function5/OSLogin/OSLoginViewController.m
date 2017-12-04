@@ -8,6 +8,8 @@
 
 #import "OSLoginViewController.h"
 
+#import "OSCodeTabBarController.h"
+
 @interface OSLoginViewController ()
 
 @end
@@ -41,9 +43,11 @@
 /**
  处理登陆回掉,刷新用户信息,通知处理
  */
-- (IBAction)loginSomething:(UIButton *)sender
-{
-    [self.navigationController popViewControllerAnimated:true];
+- (IBAction)loginSomething:(UIButton *)sender{
+#pragma mark 故事版的
+//    [UIApplication sharedApplication].delegate.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+#pragma mark 纯代码的
+    [UIApplication sharedApplication].delegate.window.rootViewController = [[OSCodeTabBarController alloc] init];
     [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshUserInfo" object:nil];
 }
 

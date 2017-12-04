@@ -86,6 +86,10 @@
 		8F65493E1FCFDCDA0049E276 /* OSTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F65493D1FCFDCDA0049E276 /* OSTableViewController.m */; };
 		8F6549421FCFE11A0049E276 /* OSPlaceholderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6549411FCFE11A0049E276 /* OSPlaceholderView.m */; };
 		8F6549451FCFE5340049E276 /* OSTabPlaceholderController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F6549441FCFE5340049E276 /* OSTabPlaceholderController.m */; };
+		8FA0FF9C1FD55B7400BEA1BF /* OSCodeTabBarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0FF9B1FD55B7400BEA1BF /* OSCodeTabBarController.m */; };
+		8FA0FFA31FD55BB300BEA1BF /* OneViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0FFA21FD55BB300BEA1BF /* OneViewController.m */; };
+		8FA0FFA61FD55BBC00BEA1BF /* TwoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0FFA51FD55BBC00BEA1BF /* TwoViewController.m */; };
+		8FA0FFA91FD55BC400BEA1BF /* ThreeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8FA0FFA81FD55BC400BEA1BF /* ThreeViewController.m */; };
 		FF9166A886C28B2D5303C10C /* libPods-OSNewFrame.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 61829A36042D5BFF108CA7C5 /* libPods-OSNewFrame.a */; };
 /* End PBXBuildFile section */
 
@@ -259,6 +263,14 @@
 		8F6549411FCFE11A0049E276 /* OSPlaceholderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSPlaceholderView.m; sourceTree = "<group>"; };
 		8F6549431FCFE5340049E276 /* OSTabPlaceholderController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSTabPlaceholderController.h; sourceTree = "<group>"; };
 		8F6549441FCFE5340049E276 /* OSTabPlaceholderController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSTabPlaceholderController.m; sourceTree = "<group>"; };
+		8FA0FF9A1FD55B7400BEA1BF /* OSCodeTabBarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OSCodeTabBarController.h; sourceTree = "<group>"; };
+		8FA0FF9B1FD55B7400BEA1BF /* OSCodeTabBarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OSCodeTabBarController.m; sourceTree = "<group>"; };
+		8FA0FFA11FD55BB300BEA1BF /* OneViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = OneViewController.h; sourceTree = "<group>"; };
+		8FA0FFA21FD55BB300BEA1BF /* OneViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = OneViewController.m; sourceTree = "<group>"; };
+		8FA0FFA41FD55BBC00BEA1BF /* TwoViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TwoViewController.h; sourceTree = "<group>"; };
+		8FA0FFA51FD55BBC00BEA1BF /* TwoViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwoViewController.m; sourceTree = "<group>"; };
+		8FA0FFA71FD55BC400BEA1BF /* ThreeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ThreeViewController.h; sourceTree = "<group>"; };
+		8FA0FFA81FD55BC400BEA1BF /* ThreeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ThreeViewController.m; sourceTree = "<group>"; };
 		9E91CBD07A77AEBB4082E2FC /* Pods-OSNewFrame.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSNewFrame.release.xcconfig"; path = "Pods/Target Support Files/Pods-OSNewFrame/Pods-OSNewFrame.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -380,12 +392,8 @@
 		8F439EA91FCE998F001CA819 /* Project */ = {
 			isa = PBXGroup;
 			children = (
-				8F439EC31FCE9BB5001CA819 /* Function1 */,
-				8F439EC21FCE9BB4001CA819 /* Function2 */,
-				8F439EC11FCE9BB2001CA819 /* Function3 */,
-				8F439EC01FCE9BB0001CA819 /* Function4 */,
-				8F439EBF1FCE9BAE001CA819 /* Function5 */,
-				8F439EBE1FCE9BAB001CA819 /* FunctionBaseController */,
+				8FA0FF961FD55B0100BEA1BF /* PureCode */,
+				8FA0FF951FD55AE700BEA1BF /* StoryBoard */,
 			);
 			path = Project;
 			sourceTree = "<group>";
@@ -393,8 +401,8 @@
 		8F439EAA1FCE99D6001CA819 /* OSMainClass */ = {
 			isa = PBXGroup;
 			children = (
-				8F439EAF1FCE9A55001CA819 /* OSTabBarController.h */,
-				8F439EB01FCE9A55001CA819 /* OSTabBarController.m */,
+				8FA0FF991FD55B5200BEA1BF /* purecode */,
+				8FA0FF981FD55B3600BEA1BF /* storyboard */,
 				8F439EB21FCE9A67001CA819 /* OSTabBar.h */,
 				8F439EB31FCE9A67001CA819 /* OSTabBar.m */,
 				8F439EB51FCE9A7D001CA819 /* OSNavigationController.h */,
@@ -823,6 +831,82 @@
 			path = OSPlaceholderView;
 			sourceTree = "<group>";
 		};
+		8FA0FF951FD55AE700BEA1BF /* StoryBoard */ = {
+			isa = PBXGroup;
+			children = (
+				8F439EC31FCE9BB5001CA819 /* Function1 */,
+				8F439EC21FCE9BB4001CA819 /* Function2 */,
+				8F439EC11FCE9BB2001CA819 /* Function3 */,
+				8F439EC01FCE9BB0001CA819 /* Function4 */,
+				8F439EBF1FCE9BAE001CA819 /* Function5 */,
+				8F439EBE1FCE9BAB001CA819 /* FunctionBaseController */,
+			);
+			path = StoryBoard;
+			sourceTree = "<group>";
+		};
+		8FA0FF961FD55B0100BEA1BF /* PureCode */ = {
+			isa = PBXGroup;
+			children = (
+				8FA0FFA01FD55B9600BEA1BF /* TabBarVCs */,
+				8FA0FF9F1FD55B9200BEA1BF /* three */,
+				8FA0FF9E1FD55B8E00BEA1BF /* two */,
+				8FA0FF9D1FD55B8400BEA1BF /* one */,
+			);
+			path = PureCode;
+			sourceTree = "<group>";
+		};
+		8FA0FF981FD55B3600BEA1BF /* storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				8F439EAF1FCE9A55001CA819 /* OSTabBarController.h */,
+				8F439EB01FCE9A55001CA819 /* OSTabBarController.m */,
+			);
+			path = storyboard;
+			sourceTree = "<group>";
+		};
+		8FA0FF991FD55B5200BEA1BF /* purecode */ = {
+			isa = PBXGroup;
+			children = (
+				8FA0FF9A1FD55B7400BEA1BF /* OSCodeTabBarController.h */,
+				8FA0FF9B1FD55B7400BEA1BF /* OSCodeTabBarController.m */,
+			);
+			path = purecode;
+			sourceTree = "<group>";
+		};
+		8FA0FF9D1FD55B8400BEA1BF /* one */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = one;
+			sourceTree = "<group>";
+		};
+		8FA0FF9E1FD55B8E00BEA1BF /* two */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = two;
+			sourceTree = "<group>";
+		};
+		8FA0FF9F1FD55B9200BEA1BF /* three */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = three;
+			sourceTree = "<group>";
+		};
+		8FA0FFA01FD55B9600BEA1BF /* TabBarVCs */ = {
+			isa = PBXGroup;
+			children = (
+				8FA0FFA11FD55BB300BEA1BF /* OneViewController.h */,
+				8FA0FFA21FD55BB300BEA1BF /* OneViewController.m */,
+				8FA0FFA41FD55BBC00BEA1BF /* TwoViewController.h */,
+				8FA0FFA51FD55BBC00BEA1BF /* TwoViewController.m */,
+				8FA0FFA71FD55BC400BEA1BF /* ThreeViewController.h */,
+				8FA0FFA81FD55BC400BEA1BF /* ThreeViewController.m */,
+			);
+			path = TabBarVCs;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1047,8 +1131,10 @@
 				8F439F1A1FCEAA24001CA819 /* ScanSuccessJumpVC.m in Sources */,
 				8F439F221FCEAA24001CA819 /* DYQBannerCell.m in Sources */,
 				8F439F401FCEB3C1001CA819 /* OSModel.m in Sources */,
+				8FA0FFA61FD55BBC00BEA1BF /* TwoViewController.m in Sources */,
 				8F439F551FCEB87E001CA819 /* OSWebViewController.m in Sources */,
 				8F65493B1FCFAE5D0049E276 /* OSSetupViewController.m in Sources */,
+				8FA0FFA31FD55BB300BEA1BF /* OneViewController.m in Sources */,
 				8F439EC61FCE9C42001CA819 /* Function1ViewController.m in Sources */,
 				8F6549241FCF9E3B0049E276 /* XFPhotoLibraryManager.m in Sources */,
 				8F439F211FCEAA24001CA819 /* SGScanningQRCodeView.m in Sources */,
@@ -1085,9 +1171,11 @@
 				8F439ECC1FCE9C60001CA819 /* Function3ViewController.m in Sources */,
 				8F439E861FCE992F001CA819 /* main.m in Sources */,
 				8F439F281FCEAAD9001CA819 /* OSNetWorkHelper.m in Sources */,
+				8FA0FF9C1FD55B7400BEA1BF /* OSCodeTabBarController.m in Sources */,
 				8F439F151FCEAA24001CA819 /* EJAlertViewController.m in Sources */,
 				8F439E781FCE992F001CA819 /* AppDelegate.m in Sources */,
 				8F439F6A1FCEC8BB001CA819 /* OSSearchHistoryCell.m in Sources */,
+				8FA0FFA91FD55BC400BEA1BF /* ThreeViewController.m in Sources */,
 				8F439F1D1FCEAA24001CA819 /* SGAlertView.m in Sources */,
 				8F439ED21FCE9C73001CA819 /* Function5ViewController.m in Sources */,
 				8F439F231FCEAA24001CA819 /* DYQBannerScrollView.m in Sources */,

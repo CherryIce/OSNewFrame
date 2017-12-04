@@ -105,6 +105,7 @@
             if (!currentCity) {
                 currentCity = @"无法定位当前城市";
             }
+            [[NSUserDefaults standardUserDefaults] setObject:currentCity forKey:@"locationCity"];
             self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:currentCity style:UIBarButtonItemStylePlain target:self action:@selector(changeCity:)];
             NSLog(@"%@",currentCity); //这就是当前的城市
             NSLog(@"%@",placeMark.name);//具体地址:  xx市xx区xx街道

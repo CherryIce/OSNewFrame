@@ -6,8 +6,8 @@
 //  Copyright © 2017年 Macx. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "OSViewController.h"
 
-@interface OSLoginViewController : UIViewController
+@interface OSLoginViewController : OSViewController
 
 @end

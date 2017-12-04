@@ -8,10 +8,14 @@
 
 #import "OSRegisterViewController.h"
 
+#import "OSWebViewController.h"
+
 @interface OSRegisterViewController ()
 
 @property (weak, nonatomic) IBOutlet UIButton *verifyBtn;
 @property (weak, nonatomic) IBOutlet UITextField *userAccountTf;
+@property (weak, nonatomic) IBOutlet UIButton *regsiterBtn;
+
 
 @property (nonatomic, strong) NSTimer * timer;
 @property (nonatomic, assign) NSInteger time;
@@ -48,7 +52,25 @@
 
 - (IBAction)registerAccount:(UIButton *)sender
 {
-    [self.navigationController popViewControllerAnimated:true];
+    /**
+     注册成功直接登录
+     **/
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshUserInfo" object:nil];
+    [UIApplication sharedApplication].delegate.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+}
+
+- (IBAction)protocolShow:(UIButton *)sender {
+    OSWebViewController * html = [[OSWebViewController alloc] init];
+    html.url = @"https://www.baidu.com";
+    html.jsMethodName = @"test";
+    html.progressViewColor = [UIColor redColor];
+    [self.navigationController showViewController:html sender:self];
+}
+
+- (IBAction)isCheckProtocol:(UIButton *)sender {
+    sender.selected = !sender.selected;
+    _regsiterBtn.backgroundColor = sender.selected ? kWhiteColor : Color235;
+    _regsiterBtn.enabled = sender.selected;
 }
 
 /**
