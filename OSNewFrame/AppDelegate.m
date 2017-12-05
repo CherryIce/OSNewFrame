@@ -23,17 +23,24 @@
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
     
+    /** 默认故事版模式 **/
+    if ([OSVerifyHelper empty:[[NSUserDefaults standardUserDefaults] objectForKey:@"isStroyBoardShow"]]) {
+        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"isStroyBoardShow"];
+    }
+    
+    /** 是否进入后台操作了 */
     _isEnterBackground = false;
-    /**
-     获取是否存在缓存
-     */
+
+    /** 获取是否存在缓存 */
     [self gainUserModel];
     
+    /** 导航样式 **/
     [self configAppearance];
     
     self.window = [[UIWindow alloc]initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
     
+    /** 新版本引导页出现 */
     if ([OSGuideViewController isShow]) {
         OSGuideViewController * guide = [[OSGuideViewController alloc] init];
         self.window.rootViewController = guide;
@@ -50,9 +57,10 @@
 
 - (void) clickEnter
 {
+    /** 默认进入登录页面 **/
     UIViewController * loginCtl = [[UIStoryboard storyboardWithName:@"OSLoginStoryboard" bundle:nil] instantiateViewControllerWithIdentifier:@"OSLogin"];
     self.window.rootViewController = [[OSNavigationController alloc] initWithRootViewController:loginCtl];
-    [self.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:2.0f];
+    [self.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:1.0f];
 }
 
 - (void) gainUserModel

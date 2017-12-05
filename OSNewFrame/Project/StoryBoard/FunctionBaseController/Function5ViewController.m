@@ -47,6 +47,8 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     [self configurationNavigation];
+    /**切换模式*/
+    [self changeCode];
 }
 
 /**
@@ -61,6 +63,21 @@
     OSSetupViewController * ctl = [[OSSetupViewController alloc] init];
     ctl.title = @"属性设置";
     [self.navigationController showViewController:ctl sender:self];
+}
+
+/** 切换代码模式 */
+- (void) changeCode
+{
+    UIButton * changeBtn = [OSUIFactory initButtonWithFrame:CGRectMake(0, 0, 200, 50) title:@"切换代码模式" textColor:[UIColor darkTextColor] font:systemOfFont(15) cornerRadius:25 tag:10 target:self action:@selector(changeClick)];
+    changeBtn.backgroundColor = kNavBarTintColor;
+    changeBtn.center = self.view.center;
+    [self.view addSubview:changeBtn];
+}
+
+- (void) changeClick
+{
+    [UIApplication sharedApplication].delegate.window.rootViewController = [[OSCodeTabBarController alloc] init];
+     [[UIApplication sharedApplication].delegate.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:2.0f];
 }
 
 - (void)didReceiveMemoryWarning {

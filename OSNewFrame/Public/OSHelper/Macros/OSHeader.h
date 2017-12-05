@@ -14,6 +14,9 @@
 /** APIRequest **/
 //#import "JobRequestAPI.h"
 
+/** MainClass */
+#import "OSCodeTabBarController.h"
+
 /**  HelpClass **/
 #import "OSUIFactory.h"
 #import "OSVerifyHelper.h"

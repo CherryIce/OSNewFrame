@@ -23,9 +23,9 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     
-    [self addChildViewController:[[OneViewController alloc] init] navTitle:AppName tabbarTitle:@"借款" tabbarImage:@"1"];
-    [self addChildViewController:[[TwoViewController alloc] init] navTitle:@"AAA" tabbarTitle:@"我的" tabbarImage:@"2"];
-    [self addChildViewController:[[ThreeViewController alloc] init] navTitle:@"ZZZ" tabbarTitle:@"借款" tabbarImage:@"3"];
+    [self addChildViewController:[[OneViewController alloc] init] navTitle:AppName tabbarTitle:@"one" tabbarImage:@"2"];
+    [self addChildViewController:[[TwoViewController alloc] init] navTitle:@"AAA" tabbarTitle:@"two" tabbarImage:@"4"];
+    [self addChildViewController:[[ThreeViewController alloc] init] navTitle:@"ZZZ" tabbarTitle:@"three" tabbarImage:@"5"];
 
 }
 
@@ -33,7 +33,7 @@
     
     NSMutableDictionary *textAttrs = [NSMutableDictionary dictionary];
     NSMutableDictionary *selectTextAttrs = [NSMutableDictionary dictionary];
-    textAttrs[NSForegroundColorAttributeName] = Color235;
+    textAttrs[NSForegroundColorAttributeName] = UIColorHex(999999);
     selectTextAttrs[NSForegroundColorAttributeName] = UIColorHex(707070);
     [controller.tabBarItem setTitleTextAttributes:textAttrs forState:UIControlStateNormal];
     [controller.tabBarItem setTitleTextAttributes:selectTextAttrs forState:UIControlStateSelected];

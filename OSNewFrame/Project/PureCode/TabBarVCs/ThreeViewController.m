@@ -17,6 +17,22 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self initUI];
+}
+
+- (void) initUI
+{
+    UIButton * changeBtn = [OSUIFactory initButtonWithFrame:CGRectMake(0, 0, 200, 50) title:@"切换故事版模式" textColor:[UIColor darkTextColor] font:systemOfFont(15) cornerRadius:25 tag:10 target:self action:@selector(changeClick)];
+    changeBtn.backgroundColor = kNavBarTintColor;
+    changeBtn.center = self.view.center;
+    [self.view addSubview:changeBtn];
+}
+
+/** 切换故事版模式 */
+- (void) changeClick
+{
+    [UIApplication sharedApplication].delegate.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    [[UIApplication sharedApplication].delegate.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:2.0f];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -8,7 +8,6 @@
 
 #import "OSLoginViewController.h"
 
-#import "OSCodeTabBarController.h"
 
 @interface OSLoginViewController ()
 
@@ -45,10 +44,15 @@
  */
 - (IBAction)loginSomething:(UIButton *)sender{
 #pragma mark 故事版的
-//    [UIApplication sharedApplication].delegate.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"isStroyBoardShow"]) {
+        [UIApplication sharedApplication].delegate.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    }
 #pragma mark 纯代码的
-    [UIApplication sharedApplication].delegate.window.rootViewController = [[OSCodeTabBarController alloc] init];
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshUserInfo" object:nil];
+    else{
+        [UIApplication sharedApplication].delegate.window.rootViewController = [[OSCodeTabBarController alloc] init];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshUserInfo" object:nil];
+    }
+    [[UIApplication sharedApplication].delegate.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:1.0f];
 }
 
 - (void)didReceiveMemoryWarning {

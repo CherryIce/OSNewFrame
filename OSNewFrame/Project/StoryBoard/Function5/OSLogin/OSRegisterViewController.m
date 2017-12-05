@@ -52,11 +52,18 @@
 
 - (IBAction)registerAccount:(UIButton *)sender
 {
-    /**
-     注册成功直接登录
-     **/
+    /**注册成功直接登录**/
     [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshUserInfo" object:nil];
-    [UIApplication sharedApplication].delegate.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+#pragma mark 故事版的
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"isStroyBoardShow"]) {
+        [UIApplication sharedApplication].delegate.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
+    }
+#pragma mark 纯代码的
+    else{
+        [UIApplication sharedApplication].delegate.window.rootViewController = [[OSCodeTabBarController alloc] init];
+        [[NSNotificationCenter defaultCenter] postNotificationName:@"refreshUserInfo" object:nil];
+    }
+    [[UIApplication sharedApplication].delegate.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:1.0f];
 }
 
 - (IBAction)protocolShow:(UIButton *)sender {
