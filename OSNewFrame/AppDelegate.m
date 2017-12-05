@@ -25,7 +25,7 @@
     
     /** 默认故事版模式 **/
     if ([OSVerifyHelper empty:[[NSUserDefaults standardUserDefaults] objectForKey:@"isStroyBoardShow"]]) {
-        [[NSUserDefaults standardUserDefaults] setObject:@(YES) forKey:@"isStroyBoardShow"];
+        [[NSUserDefaults standardUserDefaults] setObject:@(true) forKey:@"isStroyBoardShow"];
     }
     
     /** 是否进入后台操作了 */

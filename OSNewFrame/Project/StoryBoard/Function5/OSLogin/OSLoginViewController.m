@@ -44,7 +44,7 @@
  */
 - (IBAction)loginSomething:(UIButton *)sender{
 #pragma mark 故事版的
-    if ([[NSUserDefaults standardUserDefaults] objectForKey:@"isStroyBoardShow"]) {
+    if ([[[NSUserDefaults standardUserDefaults] objectForKey:@"isStroyBoardShow"] boolValue]) {
         [UIApplication sharedApplication].delegate.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
     }
 #pragma mark 纯代码的

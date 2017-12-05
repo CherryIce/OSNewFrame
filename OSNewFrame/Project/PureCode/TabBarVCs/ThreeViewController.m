@@ -31,6 +31,7 @@
 /** 切换故事版模式 */
 - (void) changeClick
 {
+    [[NSUserDefaults standardUserDefaults] setObject:@(true) forKey:@"isStroyBoardShow"];
     [UIApplication sharedApplication].delegate.window.rootViewController = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateInitialViewController];
     [[UIApplication sharedApplication].delegate.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:2.0f];
 }

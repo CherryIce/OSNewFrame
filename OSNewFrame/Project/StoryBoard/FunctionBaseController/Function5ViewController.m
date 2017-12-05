@@ -76,8 +76,9 @@
 
 - (void) changeClick
 {
+     [[NSUserDefaults standardUserDefaults] setObject:@(false) forKey:@"isStroyBoardShow"];
     [UIApplication sharedApplication].delegate.window.rootViewController = [[OSCodeTabBarController alloc] init];
-     [[UIApplication sharedApplication].delegate.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:2.0f];
+    [[UIApplication sharedApplication].delegate.window.layer transitionWithAnimType:TransitionAnimTypeRippleEffect subType:TransitionSubtypesFromRamdom curve:TransitionCurveRamdom duration:2.0f];
 }
 
 - (void)didReceiveMemoryWarning {
