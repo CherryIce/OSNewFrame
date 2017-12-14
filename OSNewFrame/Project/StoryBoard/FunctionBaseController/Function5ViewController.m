@@ -10,6 +10,8 @@
 
 #import "OSSetupViewController.h"
 
+#import "FSCustomButton.h"
+
 @interface Function5ViewController ()
 
 @end
@@ -72,6 +74,35 @@
     changeBtn.backgroundColor = kNavBarTintColor;
     changeBtn.center = self.view.center;
     [self.view addSubview:changeBtn];
+    
+    /**  */
+    FSCustomButton *button3 = [[FSCustomButton alloc] initWithFrame:CGRectMake(100, changeBtn.bottom + 10, 100, 80)];
+    button3.adjustsTitleTintColorAutomatically = YES;
+    [button3 setTintColor: ColorRGB(27, 31, 35,1)];
+    button3.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    [button3 setTitle:@"sizeToFit" forState:UIControlStateNormal];
+    button3.backgroundColor = ColorRGB(222, 234, 214,1);
+    [button3 setImage:[UIImage imageNamed:@"checkbox_chosed"] forState:UIControlStateNormal];
+    button3.layer.cornerRadius = 4;
+    button3.buttonImagePosition = FSCustomButtonImagePositionTop;
+    button3.imageEdgeInsets = UIEdgeInsetsMake(10, 0, 0, 0);
+    [self.view addSubview:button3];
+    /** **/
+    [button3 sizeToFit];
+
+    
+    FSCustomButton *button6 = [[FSCustomButton alloc] initWithFrame:CGRectMake(100, button3.bottom + 10, 200, 40)];
+    button6.titleLabel.font = [UIFont boldSystemFontOfSize:14];
+    [button6 setTitle:@"高亮边框色" forState:UIControlStateNormal];
+    [button6 setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    button6.backgroundColor = ColorRGB(222, 234, 214, 1);
+    button6.highlightedBackgroundColor = ColorRGB(0, 168, 225, 1);// 高亮时的背景色
+    [button6 setImage:[UIImage imageNamed:@"checkbox_chosed"] forState:UIControlStateNormal];
+    button6.layer.cornerRadius = 4;
+    //button6.layer.borderWidth = 2;
+    //button6.highlightedBorderColor = [UIColor redColor];
+    button6.titleEdgeInsets = UIEdgeInsetsMake(0, 5, 0, 0);
+    [self.view addSubview:button6];
 }
 
 - (void) changeClick

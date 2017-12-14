@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8F271E861FE253A600DCB00D /* FSCustomButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F271E851FE253A600DCB00D /* FSCustomButton.m */; };
 		8F439E781FCE992F001CA819 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F439E771FCE992F001CA819 /* AppDelegate.m */; };
 		8F439E7B1FCE992F001CA819 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8F439E7A1FCE992F001CA819 /* ViewController.m */; };
 		8F439E7E1FCE992F001CA819 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F439E7C1FCE992F001CA819 /* Main.storyboard */; };
@@ -113,6 +114,9 @@
 /* Begin PBXFileReference section */
 		61829A36042D5BFF108CA7C5 /* libPods-OSNewFrame.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-OSNewFrame.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		65265D062AA411BD489E565F /* Pods-OSNewFrame.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OSNewFrame.debug.xcconfig"; path = "Pods/Target Support Files/Pods-OSNewFrame/Pods-OSNewFrame.debug.xcconfig"; sourceTree = "<group>"; };
+		8F271E831FE253A500DCB00D /* FSCustomButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCustomButton.h; sourceTree = "<group>"; };
+		8F271E841FE253A500DCB00D /* FSCommenDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FSCommenDefine.h; sourceTree = "<group>"; };
+		8F271E851FE253A600DCB00D /* FSCustomButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FSCustomButton.m; sourceTree = "<group>"; };
 		8F439E731FCE992F001CA819 /* OSNewFrame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = OSNewFrame.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8F439E761FCE992F001CA819 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		8F439E771FCE992F001CA819 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -315,6 +319,16 @@
 				61829A36042D5BFF108CA7C5 /* libPods-OSNewFrame.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8F271E821FE2539000DCB00D /* FSButton */ = {
+			isa = PBXGroup;
+			children = (
+				8F271E841FE253A500DCB00D /* FSCommenDefine.h */,
+				8F271E831FE253A500DCB00D /* FSCustomButton.h */,
+				8F271E851FE253A600DCB00D /* FSCustomButton.m */,
+			);
+			path = FSButton;
 			sourceTree = "<group>";
 		};
 		8F439E6A1FCE992F001CA819 = {
@@ -584,6 +598,7 @@
 		8F439EEE1FCEAA13001CA819 /* OSThird */ = {
 			isa = PBXGroup;
 			children = (
+				8F271E821FE2539000DCB00D /* FSButton */,
 				8F65491C1FCF9E220049E276 /* XFCamera */,
 				8F439F331FCEAF7E001CA819 /* GTMBase64 */,
 				8F439EEF1FCEAA23001CA819 /* AlertController */,
@@ -1164,6 +1179,7 @@
 				8F439EDA1FCE9D13001CA819 /* OSVerifyHelper.m in Sources */,
 				8F439EEC1FCEA1AA001CA819 /* CALayer+OSBorderColor.m in Sources */,
 				8F6549451FCFE5340049E276 /* OSTabPlaceholderController.m in Sources */,
+				8F271E861FE253A600DCB00D /* FSCustomButton.m in Sources */,
 				8F439F1C1FCEAA24001CA819 /* SGScanningQRCodeVC.m in Sources */,
 				8F439F1E1FCEAA24001CA819 /* SGBottomView.m in Sources */,
 				8F439F321FCEACF1001CA819 /* LoadingView.m in Sources */,
