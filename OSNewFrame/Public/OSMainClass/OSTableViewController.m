@@ -33,6 +33,9 @@
         self.automaticallyAdjustsScrollViewInsets = false;
     }
     
+    /** 非常重要 **/
+    self.edgesForExtendedLayout = UIRectEdgeNone;
+    
     self.tableView.tableFooterView = [UIView new];
 }
 
